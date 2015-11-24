@@ -1,0 +1,25 @@
+{
+  "name": "dgreda/fann",
+  "description": "Object oriented wrapper for the FANN implementation of neural networks.",
+  "keywords": [
+    "fann",
+    "neural network",
+    "AI"
+  ],
+  "version": "0.0.1",
+  "type": "library",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Damian Gręda",
+      "email": "dj.dmg0@gmail.com"
+  ],
+  "require": {
+  },
+  "autoload": {
+    "psr-4": {
+      "FANN\\": "src/"
+    }
+  },
+  "minimum-stability": "dev"
+}
