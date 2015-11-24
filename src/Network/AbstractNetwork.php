@@ -80,4 +80,40 @@ class AbstractNetwork implements NetworkInterface
     {
         fann_destroy($this->getNetwork());
     }
+
+    /**
+     * Returns the number of neurons on the input of the neural network
+     *
+     * @author Damian Gręda <dj.dmg0@gmail.com>
+     *
+     * @return int|false Number of input neurons, or FALSE on error
+     */
+    public function getNumberOfInputNeurons()
+    {
+        return (int) fann_get_num_input($this->getNetwork());
+    }
+
+    /**
+     * Returns the number of neurons on the output of the neural network
+     *
+     * @author Damian Gręda <dj.dmg0@gmail.com>
+     *
+     * @return int|false Number of output neurons, or FALSE on error
+     */
+    public function getNumberOfOutputNeurons()
+    {
+        return (int) fann_get_num_output($this->getNetwork());
+    }
+
+    /**
+     * Gets an array containing numbers of neurons in each layer of the neural network.
+     *
+     * @author Damian Gręda <dj.dmg0@gmail.com>
+     *
+     * @return array An array of numbers of neurons in each layer
+     */
+    public function getNumbersOfNeuronsOnLayers()
+    {
+        return fann_get_layer_array($this->getNetwork());
+    }
 }

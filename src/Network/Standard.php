@@ -2,6 +2,8 @@
 
 namespace FANN\Network;
 
+use FANN\Exception\InvalidArguments;
+
 /**
  * Class Standard.
  * It implements the standard neural network.
@@ -12,6 +14,8 @@ namespace FANN\Network;
  */
 class Standard extends AbstractNetwork
 {
+    const EXCEPTION_LAYERS_MISMATCH = 'The number of layers and thus expected count of sizes provided do not match';
+
     /**
      * Standard neural network constructor.
      *
@@ -22,6 +26,10 @@ class Standard extends AbstractNetwork
      */
     public function __construct($numberOfLayers, array $layerSizes)
     {
+        if ($numberOfLayers !== count($layerSizes)) {
+            throw new InvalidArguments(static::EXCEPTION_LAYERS_MISMATCH);
+        }
+
         $this->setNumberOfLayers($numberOfLayers);
         $this->setNetwork($this->createFromLayersArray($layerSizes));
     }

@@ -9,5 +9,11 @@ namespace FANN\Network;
  */
 interface NetworkInterface
 {
+    public function getNumberOfInputNeurons();
+
+    public function getNumberOfOutputNeurons();
+
+    public function getNumbersOfNeuronsOnLayers();
+
     public function destroy();
 }
