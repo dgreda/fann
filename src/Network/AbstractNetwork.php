@@ -74,7 +74,7 @@ class AbstractNetwork implements NetworkInterface
     /**
      * Destroys the neural network and frees allocated resources
      *
-     * @author Damian Gręda <damian.greda@westwing.de>
+     * @author Damian Gręda <dj.dmg0@gmail.com>
      */
     public function destroy()
     {
